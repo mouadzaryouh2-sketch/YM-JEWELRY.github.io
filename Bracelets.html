@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracelets - Y&M JEWELRY</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Supprimer la ligne sous le logo */
+        .logo a {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+   <header class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">Y&M JEWELRY</div>
+        <div class="free-delivery">LIVRAISON GRATUITE PARTOUT AU MAROC !</div>
+    </div>
+</header>
+    <!-- MAIN CONTENT -->
+    <main class="container my-5">
+
+        <h2 class="text-center mb-4">BRACELETS</h2>
+
+        <div class="row">
+
+            <!-- PRODUIT 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card card border-0 shadow-sm text-center">
+                    <img src="images/maryem1.jpg" alt="Collier Élégant 1">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Shyné</h5>
+                        <p class="card-text">Matériau : Argent 925</p>
+                        <p class="price">Prix : 169 DH</p>
+
+                        <input type="number" class="form-control mb-2" value="1" min="1">
+
+                        <div class="product-buttons">
+    <button class="btn btn-dark">Ajouter au Panier</button>
+    <button class="btn btn-outline-dark">Acheter Maintenant</button>
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card card border-0 shadow-sm text-center">
+                    <img src="images/maryem2.jpg" alt="Collier Élégant 2">
+
+                    <div class="card-body">
+                        <h5 class="card-title">BRACELET LOVYN | BLANC</h5>
+                        <p class="card-text">Matériau : Argent 925</p>
+                        <p class="price">Prix : 195 DH</p>
+
+                        <input type="number" class="form-control mb-2" value="1" min="1">
+
+                       <div class="product-buttons">
+    <button class="btn btn-dark">Ajouter au Panier</button>
+    <button class="btn btn-outline-dark">Acheter Maintenant</button>
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUIT 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card card border-0 shadow-sm text-center">
+                    <img src="images/maryem3.jpg" alt="Collier Élégant 3">
+
+                    <div class="card-body">
+                        <h5 class="card-title">INFINITY BRACELET</h5>
+                        <p class="card-text">Matériau : Argent 925</p>
+                        <p class="price">Prix : 165 DH</p>
+
+                        <input type="number" class="form-control mb-2" value="1" min="1">
+
+                        <div class="product-buttons">
+    <button class="btn btn-dark">Ajouter au Panier</button>
+    <button class="btn btn-outline-dark">Acheter Maintenant</button>
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-3">
+        <div class="container text-center">
+            <p>
+                &copy; 2026 Y&M JEWELRY.
+                <a href="contact.html" class="text-white">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+    const elementsToAnimate = document.querySelectorAll(
+        ".top-bar, h2, .product-card"
+    );
+
+    elementsToAnimate.forEach(el => el.style.opacity = 0);
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.classList.add("animate-show");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elementsToAnimate.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

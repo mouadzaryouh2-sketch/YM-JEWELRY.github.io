@@ -1,0 +1,261 @@
+header {
+    background-color: #000; /* fond noir */
+    padding: 8px 20px; /* réduit la hauteur */
+    display: flex;
+    align-items: center; /* centre le logo verticalement */
+    justify-content: center; /* centré horizontalement */
+}
+.product-card {
+    border: 2px solid #000; /* cadre noir autour de toute la carte */
+    border-radius: 10px;     /* coins arrondis */
+    padding: 10px;           /* espace intérieur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;      /* centre texte et boutons */
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* image entière visible */
+    border-bottom: none; /* enlever le petit trait sous l’image */
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #000;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+    animation: logoFade 1s ease-out forwards;
+    text-align: center;
+
+    /* SUPPRESSION COMPLÈTE DE LA LIGNE */
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+
+}
+
+/* Animation apparition subtile */
+@keyframes logoFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.collection-card, .product-card {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.collection-card:hover, .product-card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.carousel img {
+    transition: transform 0.3s ease;
+}
+.carousel img:hover {
+    transform: scale(1.1);
+}
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Images des produits arrondies */
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px; /* ajuste : 15px / 20px / 30px */
+    object-fit: cover;
+}
+  
+/* ===== PRIX PRODUITS ===== */
+.product-price,
+.price,
+.card-price {
+    color: inherit !important;   /* 👈 prend la couleur du titre */
+    font-weight: 600;
+    font-size: 16px;
+}
+
+  
+  /* FORCER boutons l’un sous l’autre */
+.product-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px;
+}
+
+.product-buttons .btn {
+    width: 100%;
+}
+
+
+/* ===== TOP HEADER BAR ===== */
+.top-bar {
+    background-color: #000;
+    color: #fff;
+    height: 50px;            /* 👈 hauteur réduite */
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .logo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.top-bar .free-delivery {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .top-bar {
+        height: auto;
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    .top-bar .container {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+/* Boutons "Voir la Collection" pour toutes les collections */
+.collection-card .btn-dark {
+    background-color: #000; /* noir foncé */
+    border-color: #000;     /* même couleur pour la bordure */
+    color: #fff;            /* texte blanc */
+    transition: background-color 0.3s ease;
+}
+
+.collection-card .btn-dark:hover {
+    background-color: #111; /* légèrement plus clair au survol */
+    border-color: #111;
+}
+/* Animation simple fade-in + slide */
+@keyframes fadeSlideInSimple {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation fade-in + slide */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe ajoutée par JS pour déclencher l'animation */
+.animate-show {
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+/* Animation fade-in + slide */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe appliquée par JS pour déclencher l'animation */
+.animate-show {
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+/* Effet zoom subtil pour les images des produits */
+.product-card img {
+    transition: transform 0.3s ease; /* transition douce */
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* zoom léger */
+}
+/* Zoom subtil sur les images des produits, collections et services */
+.product-card img,
+.collection-card img,
+.service-card img {
+    transition: transform 0.3s ease; /* transition fluide */
+    margin: 0 auto 10px auto; /* centre horizontalement + espace en bas */
+    display: block; /* nécessaire pour margin auto horizontal */
+}
+
+.product-card:hover img,
+.collection-card:hover img,
+.service-card:hover img {
+    transform: scale(1.05); /* zoom léger au survol */
+}
+/* ===== ANIMATION FADE + SLIDE POUR LOGO ET LIVRAISON GRATUITE ===== */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour le logo du site */
+header .logo {
+    opacity: 0; /* départ invisible */
+    animation: fadeSlideUp 1s ease-out forwards;
+    animation-delay: 0.2s; /* délai avant apparition */
+}
+
+/* Animation pour le texte "Livraison Gratuite" */
+.top-bar .free-delivery {
+    opacity: 0; /* départ invisible */
+    animation: fadeSlideUp 1s ease-out forwards;
+    animation-delay: 0.2s; /* délai un peu plus long que le logo */
+}
